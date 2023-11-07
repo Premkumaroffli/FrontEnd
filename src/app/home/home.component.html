@@ -1,0 +1,28 @@
+<!-- src/app/home/home.component.html -->
+<div class="bg-gray-100 h-screen flex items-center justify-center">
+    <div class="bg-yellow-300 p-8 rounded-xl flex flex-col items-center justify-center gap-4 shadow-lg">
+      <div class="flex flex-col items-center justify-center gap-2">
+        <h1 class="text-3xl"><b>We are coming soon</b></h1>
+        <p class="text-md text-red-400">(Starting with free t-shirts so keep watching us!..)</p>
+      </div>
+      <p class="text-center">We are almost there! If you want to get notified when the website goes live, <br>
+        subscribe to our mailing list!
+      </p>
+      <form *ngIf="!savedmsg"class="flex flex-row gap-2" (ngSubmit)="onSubmit()">
+        <input
+          class="text-sm appearance-none rounded w-full py-2 px-3 text-gray-700 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline h-10"
+          id="email" name="email" type="text" [(ngModel)]="email"
+          placeholder="Your email address"/>
+        <button type = "submit" class="text-white bg-red-500 px-4 border-black py-2 rounded-xl ">Email</button>
+      </form>
+      <div *ngIf="savedmsg" class="flex items-center flex-row gap-2 justify-center ">
+        <mat-icon class=" rounded-full text-center text-md font-bold bg-green-300
+        ">check</mat-icon>
+        <small class="text-violet-500">Email Registered</small>
+      </div>
+      <div *ngIf="savedmsg" class="flex text-sm flex-row items-center justify-center">
+        <p>Come Back Update Soon!...</p>
+      </div>
+    </div>
+  </div>
+  
