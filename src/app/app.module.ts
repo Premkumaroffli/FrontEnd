@@ -8,12 +8,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
-
+import { ComplaintComponent } from './complaint/complaint.component';
+import { ReactiveFormsModule } from '@angular/forms'; 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    ComplaintComponent,
   ],
   imports: [
     BrowserModule,
@@ -21,7 +23,8 @@ import { MatIconModule } from '@angular/material/icon';
     AuthModule,
     HttpClientModule,
     FormsModule,
-    MatIconModule
+    MatIconModule,
+    ReactiveFormsModule
   ],
  
   bootstrap: [AppComponent]
