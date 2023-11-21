@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
-import { AuthService } from './../shared/auth.service';
+import { AuthService } from '../shared/auth.service';
 import { Router } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-msgpage',
+  templateUrl: './msgpage.component.html',
+  styleUrls: ['./msgpage.component.scss']
 })
-export class HomeComponent {
+export class MsgPageComponent {
   email: string = '';
   savedmsg: boolean = false;
 

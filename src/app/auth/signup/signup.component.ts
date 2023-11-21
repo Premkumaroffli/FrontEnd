@@ -35,7 +35,6 @@ export class SignupComponent implements OnInit {
         if (response.status === 'success') {
           // Successful login logic, redirect or show success message
           console.log('Login successful');
-          localStorage.setItem('token','12345')
           this.status = true;
         } 
         else {

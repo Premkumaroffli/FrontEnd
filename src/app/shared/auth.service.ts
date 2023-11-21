@@ -26,16 +26,15 @@ export class AuthService {
 
   savecomplaint(path:string, formdata: any): Observable<any> {
     return this.http.post<any>(this.apiUrl + path, formdata);
- }
+  }
 
   getAllData(path:string): Observable<any> {
   return this.http.get<any>(this.apiUrl + path);
   }
 
-
   isloggedin()
   {
-    return !!localStorage.getItem('token');
+    return !!localStorage.getItem('LoginToken');
   }
 }
  

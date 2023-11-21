@@ -111,4 +111,9 @@ export class ComplaintComponent {
     });
 
   }
+
+  loginGo()
+  {
+    this.router.navigate(['/login']);
+  }
 }

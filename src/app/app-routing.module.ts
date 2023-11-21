@@ -1,29 +1,32 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './home/home.component';
+import { MsgPageComponent } from './msgpage/msgpage.component';
 import { LoginComponent } from './auth/login/login.component';
 import { ComplaintComponent } from './complaint/complaint.component';
 import { ListpageComponent } from './listpage/listpage.component';
+import { AuthGuard } from './shared/auth.guard';
 
 const routes: Routes = [
   {
     path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule)
+    loadChildren: () => import('./auth/auth.module').then(m => m.AuthModule),
   },
   {
-    path: 'home',
-    component : HomeComponent
+    path: 'msgpage',
+    component : MsgPageComponent,
+    canActivate: [AuthGuard] 
   },
   {
     path: 'listpage',
-    component : ListpageComponent
+    component : ListpageComponent,
+    canActivate: [AuthGuard] 
   },
   {
-    path: '',
+    path: 'login',
     component : LoginComponent
   },
   {
-    path: 'complaint',
+    path: '',
     component : ComplaintComponent
   }
 ];

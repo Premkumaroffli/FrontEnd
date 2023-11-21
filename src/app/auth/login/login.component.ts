@@ -30,15 +30,18 @@ export class LoginComponent {
   onSubmit() { 
     this.authService.login('api/login', this.myForm.value).subscribe(response => {
       if (response.status === 'success') {
+        alert('Login Success');
         // Successful login logic, redirect or show success message
         console.log('Login successful');
-        localStorage.setItem('token','12345')
+        localStorage.setItem('LoginToken',response.data.token);
         this.router.navigate(['/listpage']);
-
+        console.log('Login successful');
       } 
+      
       else {
         // Failed login logic, show error message
         console.log('Login failed');
+        alert(response.message)
         this.status = false;
       }
     });

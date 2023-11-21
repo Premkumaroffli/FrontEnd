@@ -63,7 +63,7 @@ export class ListpageComponent implements OnInit {
     
   } 
 
-  pathUrl = this.AuthService.apiUrl;
+  pathUrl = 'http://localhost/backend/app/application/';
   ngOnInit(): void {
     this.loadData();
   }
@@ -71,7 +71,7 @@ export class ListpageComponent implements OnInit {
   openDialog(img: any): void {
     const dialogRef = this.dialog.open(PopupDialogComponent, {
       width: '80%', // Adjust width as needed
-      data: { imageUrl: img }
+      data: { imageUrl: img, pathUrl: this.pathUrl }
     });
   }
 
