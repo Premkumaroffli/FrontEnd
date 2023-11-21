@@ -28,6 +28,10 @@ const routes: Routes = [
   {
     path: '',
     component : ComplaintComponent
+  },
+  {
+    path: 'complaint',
+    component : ComplaintComponent
   }
 ];
 
