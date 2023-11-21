@@ -9,13 +9,18 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { ComplaintComponent } from './complaint/complaint.component';
-import { ReactiveFormsModule } from '@angular/forms'; 
+import { ReactiveFormsModule } from '@angular/forms';
+import { ListpageComponent } from './listpage/listpage.component';
+import { PopupDialogComponent } from './popup-dialog/popup-dialog.component'; 
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ComplaintComponent,
+    ListpageComponent,
+    PopupDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -24,7 +29,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     MatIconModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatDialogModule
   ],
  
   bootstrap: [AppComponent]

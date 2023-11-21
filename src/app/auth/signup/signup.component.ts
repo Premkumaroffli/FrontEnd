@@ -11,6 +11,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SignupComponent implements OnInit {
 
   myForm!: FormGroup ;
+  status : boolean = false;
 
   constructor(
     // public myForm: FormGroup,
@@ -35,7 +36,7 @@ export class SignupComponent implements OnInit {
           // Successful login logic, redirect or show success message
           console.log('Login successful');
           localStorage.setItem('token','12345')
-          this.router.navigate(['/home']);
+          this.status = true;
         } 
         else {
           // Failed login logic, show error message

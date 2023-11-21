@@ -33,7 +33,7 @@ export class LoginComponent {
         // Successful login logic, redirect or show success message
         console.log('Login successful');
         localStorage.setItem('token','12345')
-        this.router.navigate(['/home']);
+        this.router.navigate(['/listpage']);
 
       } 
       else {

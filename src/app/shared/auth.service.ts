@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 
 export class AuthService {
-  private apiUrl = 'http://localhost/backend/app/index.php/';
+  public apiUrl = 'http://localhost/backend/app/index.php/';
 
   constructor(public http: HttpClient) { }
 
@@ -27,6 +27,10 @@ export class AuthService {
   savecomplaint(path:string, formdata: any): Observable<any> {
     return this.http.post<any>(this.apiUrl + path, formdata);
  }
+
+  getAllData(path:string): Observable<any> {
+  return this.http.get<any>(this.apiUrl + path);
+  }
 
 
   isloggedin()

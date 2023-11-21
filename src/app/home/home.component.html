@@ -1,36 +1,8 @@
 <!-- src/app/home/home.component.html -->
 <div class="bg-gray-100 h-screen flex items-center justify-center">
-    <div class="bg-yellow-300 p-8 rounded-xl flex flex-col items-center justify-center gap-4 shadow-lg">
-      <div class="flex flex-col items-center justify-center gap-2">
-        <h1 class="text-3xl"><b>We are coming soon..!</b></h1>
-        <p class="text-md text-red-400">(Starting with free t-shirts so keep watching us!..)</p>
-      </div>
-      <p class="text-center">We are almost there! If you want to get notified when the website goes live, <br>
-        subscribe to our mailing list!
-      </p>
-      <form *ngIf="!savedmsg"class="flex flex-row gap-2" (ngSubmit)="onSubmit()">
-        <input
-          class="text-sm appearance-none rounded w-full py-2 px-3 text-gray-700 bg-gray-100 leading-tight focus:outline-none focus:shadow-outline h-10"
-          id="email" name="email" type="text" [(ngModel)]="email"
-          placeholder="Your email address"/>
-        <button type = "submit" class="text-white bg-red-500 px-4 border-black py-2 rounded-xl ">Email</button>
-      </form>
-      <div *ngIf="savedmsg" class="flex items-center flex-row gap-2 justify-center ">
-        <mat-icon class=" rounded-full text-center text-md font-bold bg-green-300
-        ">check</mat-icon>
-        <small class="text-violet-500">Email Registered</small>
-      </div>
-      <div *ngIf="savedmsg" class="flex text-sm flex-row items-center justify-center">
-        <p>Come Back Update Soon!...</p>
-      </div>
-      <div class="flex flex-col gap-1 items-center">
-      <a href="https://www.instagram.com/animecloths_/" target="_blank">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4H7.6m9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3Z"/></svg> 
-      </a> 
-      <p class="text-sm text-bold">Join Us</p>  
-    </div> 
-
+    <div class="bg-yellow-300 p-8 rounded-xl flex flex-col items-center justify-center gap-2 shadow-lg">
+      <h2>Your Registration is Succesfully </h2>
+      <h4>Our team will contact you soon ...</h4>
     </div>
   </div>
   

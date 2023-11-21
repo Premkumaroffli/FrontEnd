@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./complaint.component.scss']
 })
 export class ComplaintComponent {
-  myForm!: FormGroup;
+
   selectedOption: Number = 0;
   options: any[] = [
     { id: 1, name: 'Road Issues' },
@@ -21,15 +21,16 @@ export class ComplaintComponent {
 
   url :any = '';
 
-  formdata = {
+  formdata :any = {
     name: '',
-    issues: '',
+    issues: 'red',
     selectedOption: '',
     complaint: '',
     address: '',
     phone: '',
     image:'',
   };
+  
 
   status  = true;
 
@@ -41,12 +42,7 @@ export class ComplaintComponent {
     ) { }
 
   ngOnInit() {
-    this.myForm = this.fb.group({
-      name: ['', Validators.required],
-      address: ['', Validators.required],
-      phone: ['', Validators.required],
-      image: ['']
-    });
+
   }
 
   onSelectionChange()
@@ -67,6 +63,23 @@ export class ComplaintComponent {
     this.formdata.image = event.target.files[0];
  }
 
+  // uploadFile() {
+  //   if (!this.formdata.image) {
+  //     console.error('No file selected.');
+  //     return;
+  //   }
+  
+  //   const formData = new FormData();
+  //   formData.append('file', this.formdata.image);
+  
+  //   this.authService.uploadFile('Formdata/uploadFile', formData).subscribe(response => {
+  //     if (response.status === 'success') {
+  //       console.log(response);
+  //     }
+  //   });
+  // }
+  
+
   onFileChange(event: any) {
     if(event.target.files.length > 0)
     {
@@ -77,10 +90,12 @@ export class ComplaintComponent {
   }
 
   onSubmit() { 
-    console.log(this.formdata);
     const formData = new FormData();
-    formData.append('file', this.formdata.image);
-    console.log(formData);
+
+    // Append form fields to FormData
+    Object.keys(this.formdata).forEach(key => {
+      formData.append(key, this.formdata[key]);
+    });
     this.authService.savecomplaint('Formdata/issuedetails', formData).subscribe(response => {
       if (response.status === 'success') {
         // Successful login logic, redirect or show success message
