@@ -14,7 +14,6 @@ const routes: Routes = [
   {
     path: 'msgpage',
     component : MsgPageComponent,
-    canActivate: [AuthGuard] 
   },
   {
     path: 'listpage',

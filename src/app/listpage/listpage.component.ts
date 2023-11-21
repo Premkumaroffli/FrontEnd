@@ -17,46 +17,6 @@ import { AuthService } from '../shared/auth.service';
 })
 export class ListpageComponent implements OnInit {
 
-  //  data = [
-  //   { id: 1,
-  //     name: 'Item 1', 
-  //     issue: 'Pipe Damage',
-  //     selectedOption: '',
-  //     complaint: 'Broken pipes can result in extensive structural damage if not taken care of right away. Pipes can burst due to many different reasons, find out more',
-  //     address: 'Robert Robertson, 1234 NW Bobcat Lane, St. Robert, MO 65584-5678.',
-  //     phone: '1234567890',
-  //     image: 'assets/bgimg.jpg',
-  //   },
-  //   { id: 1,
-  //     name: 'Item 1', 
-  //     issue: 'Pipe Damage',
-  //     selectedOption: '',
-  //     complaint: 'Broken pipes can result in extensive structural damage if not taken care of right away. Pipes can burst due to many different reasons, find out more',
-  //     address: 'Robert Robertson, 1234 NW Bobcat Lane, St. Robert, MO 65584-5678.',
-  //     phone: '1234567890',
-  //     image:'assets/pipeproblem.jpeg',
-  //   },
-  //   { id: 1,
-  //     name: 'Item 1', 
-  //     issue: 'Pipe Damage',
-  //     selectedOption: '',
-  //     complaint: 'Broken pipes can result in extensive structural damage if not taken care of right away. Pipes can burst due to many different reasons, find out more',
-  //     address: 'Robert Robertson, 1234 NW Bobcat Lane, St. Robert, MO 65584-5678.',
-  //     phone: '1234567890',
-  //     image:'',
-  //   },
-  //   { id: 1,
-  //     name: 'Item 1', 
-  //     issue: 'Pipe Damage',
-  //     selectedOption: '',
-  //     complaint: 'Broken pipes can result in extensive structural damage if not taken care of right away. Pipes can burst due to many different reasons, find out more',
-  //     address: 'Robert Robertson, 1234 NW Bobcat Lane, St. Robert, MO 65584-5678.',
-  //     phone: '1234567890',
-  //     image:'',
-  //   },
-  //   // ... more items
-  // ];
-
   dataList: any[] = [];
   constructor(public dialog: MatDialog,
   private AuthService: AuthService) {

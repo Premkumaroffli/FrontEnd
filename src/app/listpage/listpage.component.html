@@ -9,9 +9,6 @@
                         S.No
                     </th>
                     <th scope="col" class="px-6 py-3">
-                        Issue
-                    </th>
-                    <th scope="col" class="px-6 py-3">
                         Name
                     </th>
                     <th scope="col" class="px-6 py-3">
@@ -36,16 +33,13 @@
                     <td scope="row" class="px-6 py-4 w-[15%] font-medium text-gray-900 whitespace-nowrap dark:text-black">
                         {{row.name}}
                     </td>
-                    <td scope="row" class="px-6 py-4 w-[15%] font-medium text-gray-900 whitespace-nowrap dark:text-black">
-                        {{row.issue}}
-                    </td>
-                    <td class="px-6 py-4 w-[10%]">
+                    <td class="px-6 py-4 w-[20%]">
                          <img (click)="openDialog(row.image_url)" [src]="pathUrl + row.image_url" alt="">
                     </td>
                     <td class="px-6 py-4 w-[25%]">
                         {{row.complaint}}
                     </td>
-                    <td class="px-6 py-4 w-[25%]">
+                    <td class="px-6 py-4 w-[30%]">
                         {{row.address}}
                     </td>
                     <td class="px-6 py-4 w-[5%]">

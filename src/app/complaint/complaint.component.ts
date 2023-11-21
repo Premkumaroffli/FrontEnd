@@ -23,7 +23,6 @@ export class ComplaintComponent {
 
   formdata :any = {
     name: '',
-    issues: 'red',
     selectedOption: '',
     complaint: '',
     address: '',
@@ -100,7 +99,7 @@ export class ComplaintComponent {
       if (response.status === 'success') {
         // Successful login logic, redirect or show success message
         console.log('Data successful');
-        this.router.navigate(['/home']);
+        this.router.navigate(['/msgpage']);
 
       } 
       else {
