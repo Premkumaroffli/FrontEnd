@@ -5,21 +5,19 @@ import {
 import { PopupDialogComponent } from '../popup-dialog/popup-dialog.component';
 import { AuthService } from '../shared/auth.service';
 import { ViewDialogComponent } from '../view-dialog/view-dialog.component';
-import { StatusDialogComponent } from '../status-dialog/status-dialog.component';
 
 @Component({
-  selector: 'app-listpage',
-  templateUrl: './listpage.component.html',
-  styleUrls: ['./listpage.component.scss']
+  selector: 'app-adminlist',
+  templateUrl: './adminlist.component.html',
+  styleUrls: ['./adminlist.component.scss']
 })
-export class ListpageComponent implements OnInit {
+export class AdminListpageComponent implements OnInit {
 
   displayedColumns: string[] = ['s_no', 'name', 'complaint', 'address', 'phone', 'status']; // Replace with your actual column names
   dataSource: any[] = [];
 
   dataList: any[] = [];
   constructor(public dialog: MatDialog,
-
   private AuthService: AuthService) {
     
   } 
@@ -36,14 +34,23 @@ export class ListpageComponent implements OnInit {
     });
   }
 
+  onLogoutClick(): void {
+    this.AuthService.logout();
+  }
+
+  ViewDialog(data: any): void {
+    data.type = 'admin';
+    const dialogRef = this.dialog.open(ViewDialogComponent, {
+      width: '50%',
+      height: '315px',
+      data: { viewdata: data }
+    });
+  }
+
   selectedImageUrl: string | null = null;
 
   showLargeImage(row: any): void {
     this.selectedImageUrl = row.image;
-  }
-
-  onLogoutClick(): void {
-    this.AuthService.logout();
   }
 
   loadData(): void {
@@ -51,14 +58,6 @@ export class ListpageComponent implements OnInit {
       console.log(data);
       this.dataList = data;
       this.dataSource = data;
-    });
-  }
-  ViewDialog(data: any): void {
-    data.type = 'list';
-    const dialogRef = this.dialog.open(StatusDialogComponent, {
-      width: '50%',
-      height: '400px',
-      data: { viewdata: data }
     });
   }
 

@@ -5,6 +5,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { ComplaintComponent } from './complaint/complaint.component';
 import { ListpageComponent } from './listpage/listpage.component';
 import { AuthGuard } from './shared/auth.guard';
+import { AdminListpageComponent } from './adminlist/adminlist.component';
 
 const routes: Routes = [
   {
@@ -21,16 +22,18 @@ const routes: Routes = [
     canActivate: [AuthGuard] 
   },
   {
-    path: 'login',
+    path: '',
     component : LoginComponent
   },
   {
-    path: '',
-    component : ComplaintComponent
+    path: 'complaint',
+    component : ComplaintComponent,
+    canActivate: [AuthGuard] 
   },
   {
-    path: 'complaint',
-    component : ComplaintComponent
+    path: 'adminlist',
+    component : AdminListpageComponent,
+    canActivate: [AuthGuard] 
   }
 ];
 

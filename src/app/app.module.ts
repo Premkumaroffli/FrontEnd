@@ -14,6 +14,11 @@ import { ListpageComponent } from './listpage/listpage.component';
 import { PopupDialogComponent } from './popup-dialog/popup-dialog.component'; 
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { AuthGuard } from './shared/auth.guard';
+import { ViewDialogComponent } from './view-dialog/view-dialog.component';
+import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { AdminListpageComponent } from './adminlist/adminlist.component';
+import { StatusDialogComponent } from './status-dialog/status-dialog.component';
 
 
 @NgModule({
@@ -23,6 +28,9 @@ import { AuthGuard } from './shared/auth.guard';
     ComplaintComponent,
     ListpageComponent,
     PopupDialogComponent,
+    ViewDialogComponent,
+    AdminListpageComponent,
+    StatusDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +40,9 @@ import { AuthGuard } from './shared/auth.guard';
     FormsModule,
     MatIconModule,
     ReactiveFormsModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule,
+    MatInputModule
   ],
   providers: [
     AuthGuard,

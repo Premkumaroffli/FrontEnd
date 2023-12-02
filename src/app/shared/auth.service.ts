@@ -36,5 +36,13 @@ export class AuthService {
   {
     return !!localStorage.getItem('LoginToken');
   }
+
+  logout(): void {
+    // Clear authentication tokens or session data
+    localStorage.removeItem('LoginToken');
+    sessionStorage.clear();
+    window.location.reload();
+  }
+  
 }
  

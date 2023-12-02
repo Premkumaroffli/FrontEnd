@@ -26,15 +26,23 @@ export class LoginComponent {
       password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
-
+  user :any;
   onSubmit() { 
     this.authService.login('api/login', this.myForm.value).subscribe(response => {
       if (response.status === 'success') {
-        alert('Login Success');
+        this.user = response.data.user_type;
+        alert(response.message);
         // Successful login logic, redirect or show success message
         console.log('Login successful');
         localStorage.setItem('LoginToken',response.data.token);
-        this.router.navigate(['/listpage']);
+        if(this.user === 'admin')
+        {
+          this.router.navigate(['/adminlist']);
+        }
+        else
+        {
+          this.router.navigate(['/listpage']);
+        }
         console.log('Login successful');
       } 
       

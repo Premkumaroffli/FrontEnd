@@ -99,7 +99,7 @@ export class ComplaintComponent {
       if (response.status === 'success') {
         // Successful login logic, redirect or show success message
         console.log('Data successful');
-        this.router.navigate(['/msgpage']);
+        this.router.navigate(['/listpage']);
 
       } 
       else {

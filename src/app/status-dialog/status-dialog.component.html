@@ -1,0 +1,63 @@
+<div class="h-full  bg-slate-200">
+    <button mat-icon-button (click)="closeDialog()" class="close-button">
+      <mat-icon>close</mat-icon>
+    </button>
+
+    <main *ngIf="data.type ==='list'" class=" w-full h-full flex flex-row p-8 bg-slate-200 text-black items-center justify-center">
+
+      <section x-data="skillDisplay"
+          class="p-6 flex flex-col gap-8">
+
+          <div class="flex flex-row items-center justify-center ">
+              <div class="h-10 flex items-center justify-center">
+                 <div class="bg-white border-4 border-black flex flex-row gap-4 w-36 p-2 rounded-full ">
+                  <mat-icon *ngIf="data.viewed === '1'" class="text-green-500">check_circle</mat-icon>
+                  <mat-icon *ngIf="data.viewed === '0'" class="text-red-500">cancel</mat-icon>
+                  Viewed
+                 </div>
+              </div>
+              <div class="h-1 bg-black w-10 rounded-full"></div>
+              <div class="h-10 flex items-center justify-center">
+                <div class="bg-white border-4 border-black flex flex-row gap-4 w-36 p-2 rounded-full ">
+                 <mat-icon *ngIf="data.processing === '1'" class="text-green-500">check_circle</mat-icon>
+                 <mat-icon *ngIf="data.processing === '0'" class="text-red-500">cancel</mat-icon>
+                 Action
+                </div>
+             </div>
+             <div class="h-1 bg-black w-10 rounded-full"></div>
+             <div class="h-10 flex items-center justify-center">
+              <div class="bg-white border-4 border-black flex flex-row gap-4 w-36 p-2 rounded-full  ">
+               <mat-icon *ngIf="data.completed === '1'" class="text-green-500">check_circle</mat-icon>
+               <mat-icon *ngIf="data.completed === '0'" class="text-red-500">cancel</mat-icon>
+               Completed
+              </div>
+           </div>
+          </div>
+  
+          <div *ngIf="data.viewed === '0' && data.processing === '0'" class="flex items-center justify-center" >
+              <p class="border-2 border-black p-4">Your request was reached successfully... We will take immediate action... </p>
+          </div>
+          <div *ngIf="data.viewed === '1' && data.processing === '0' && data.completed === '0' " class="flex items-center  justify-center  " >
+            <p class="border-2 border-black p-4">Waiting For Action</p>
+          </div>
+          <div *ngIf="data.viewed === '1' && data.processing === '1' && data.completed === '0' " class="flex items-center justify-center" >
+            <p class="border-2 border-black p-4">Your Complaint Request is in Process</p>
+          </div>
+          <div *ngIf="data.completed === '1' && data.processing === '1' && data.viewed === '1'" class="flex flex-col gap-4 items-center justify-center" >
+           <div class="flex flex-row gap-8">
+            <div class="flex flex-col items-center justify-center gap-4">
+            <p class="text-left">Before</p>
+            <img  (click)="openDialog(data.image_url)" [src]="pathUrl + data.image_url" alt="">
+          </div>
+          <div class="flex flex-col items-center justify-center gap-4">
+            <p class="text-left">After</p>
+             <img (click)="openDialog(data.completed_image)" [src]="pathUrl + data.completed_image" alt="">
+          </div>
+        </div>
+             <p> ( Your Issue are Solved....... )</p>
+          </div>
+        </section>
+    </main>
+
+    
+</div>
